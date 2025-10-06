@@ -2933,15 +2933,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .recent-blog-area .single-recent-blog-post .thumb {
+  width: 300px;
+  height: 150px;
   overflow: hidden;
 }
 
 .recent-blog-area .single-recent-blog-post .thumb img {
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
+
+
 
 .recent-blog-area .single-recent-blog-post .tags {
   margin: 20px 0px;
