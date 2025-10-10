@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 from blog.models import Post
 from django.core.paginator import Paginator ,PageNotAnInteger, EmptyPage
+from website.models import Contact
 # Create your views here.
 
 
@@ -33,9 +35,6 @@ def blog_single(request, pid):
     return render(request, 'blog/blog-single.html', context)
 
 
-def test(request):
-    return render(request, 'test.html')
-
 
 # def blog_category(request, cat_name):
 #     posts = Post.objects.filter(status=1)
@@ -53,3 +52,19 @@ def blog_search(request):
     
     context = {'posts':posts}
     return render(request ,'blog/blog-home.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+def test(request):
+    
+
+    return render(request, 'test.html')

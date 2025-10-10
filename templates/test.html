@@ -1,4 +1,3 @@
-{% load blog_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    {% posts as totalposts %}
-    {% for post in totalposts %}
-    <p>{{post.content|snippets:50}}</p>
-    {% endfor %}
-    {% popularposts %} 
+
+    <form action="{% url 'blog:test' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+    </form>
+
 </body>
 </html>

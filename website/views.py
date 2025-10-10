@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.core.paginator import Paginator
-from blog.models import Post
+from website.forms import ContactForm
 
 
 def index_view(request):
@@ -15,5 +14,13 @@ def about_view(request):
 
 
 def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            return HttpResponse('not valid')
+        
+    form = ContactForm()
 
-    return render(request, 'website/contact.html')
+    return render(request, 'website/contact.html', {'form':form})
